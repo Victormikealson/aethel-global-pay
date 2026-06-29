@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 40)],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.3), blurRadius: 40)],
       ),
       child: _formContent(),
     );
@@ -158,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
         Text('Secure Access',
             style: GoogleFonts.playfairDisplay(color: AppColors.navy, fontSize: 26, fontWeight: FontWeight.bold)),
         const SizedBox(height: 6),
-        Text('Enter your credentials to access the private banking portal',
+        const Text('Enter your credentials to access the private banking portal',
             style: TextStyle(color: AppColors.textGray, fontSize: 13)),
         const SizedBox(height: 32),
 
@@ -230,10 +230,10 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
 
         const SizedBox(height: 24),
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const Icon(Icons.shield_outlined, size: 13, color: Color(0xFF9ca3af)),
-          const SizedBox(width: 6),
-          const Text('256-bit SSL Encrypted · ISO 27001 Certified',
+        const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Icon(Icons.shield_outlined, size: 13, color: Color(0xFF9ca3af)),
+          SizedBox(width: 6),
+          Text('256-bit SSL Encrypted · ISO 27001 Certified',
               style: TextStyle(color: Color(0xFF9ca3af), fontSize: 11)),
         ]),
       ],
@@ -247,7 +247,7 @@ class _LoginScreenState extends State<LoginScreen> {
         width: (i + 1) * 120.0, height: (i + 1) * 120.0,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          border: Border.all(color: AppColors.gold.withOpacity(0.15), width: 1),
+          border: Border.all(color: AppColors.gold.withValues(alpha: 0.15), width: 1),
         ),
       )),
       Column(mainAxisSize: MainAxisSize.min, children: [
@@ -302,7 +302,7 @@ class _LoginScreenState extends State<LoginScreen> {
       enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14),
           borderSide: const BorderSide(color: Color(0xFFe5e7eb))),
       focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide(color: AppColors.navy, width: 2)),
+          borderSide: const BorderSide(color: AppColors.navy, width: 2)),
       filled: true,
       fillColor: Colors.white,
     );
