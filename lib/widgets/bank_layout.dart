@@ -25,13 +25,13 @@ class BankLayout extends StatefulWidget {
 
 class _BankLayoutState extends State<BankLayout> {
   int _selectedIndex = 0;
-  final bool _drawerOpen = false;
 
   late final List<NavItem> _navItems = [
     const NavItem('Dashboard', Icons.dashboard_outlined, DashboardScreen()),
     const NavItem('Accounts', Icons.credit_card_outlined, AccountsScreen()),
     const NavItem('Payments', Icons.swap_horiz, PaymentsScreen()),
-    const NavItem('Global Banks', Icons.account_balance_outlined, BanksScreen()),
+    const NavItem(
+        'Global Banks', Icons.account_balance_outlined, BanksScreen()),
     const NavItem('Transfers', Icons.public, TransfersScreen()),
   ];
 
@@ -66,10 +66,12 @@ class _BankLayoutState extends State<BankLayout> {
         ],
       ),
       // Drawer for narrow screens
-      drawer: wide ? null : Drawer(
-        width: 260,
-        child: _buildSidebarContent(context),
-      ),
+      drawer: wide
+          ? null
+          : Drawer(
+              width: 260,
+              child: _buildSidebarContent(context),
+            ),
     );
   }
 
@@ -85,33 +87,54 @@ class _BankLayoutState extends State<BankLayout> {
       child: Row(
         children: [
           if (!wide)
-            Builder(builder: (ctx) => IconButton(
-              icon: const Icon(Icons.menu, color: AppColors.textGray),
-              onPressed: () => Scaffold.of(ctx).openDrawer(),
-            )),
+            Builder(
+                builder: (ctx) => IconButton(
+                      icon: const Icon(Icons.menu, color: AppColors.textGray),
+                      onPressed: () => Scaffold.of(ctx).openDrawer(),
+                    )),
           if (!wide) const SizedBox(width: 8),
           if (wide) ...[
-            const Text('Private Monetary Banking System', style: TextStyle(color: AppColors.textGray, fontSize: 13)),
+            const Text('Private Monetary Banking System',
+                style: TextStyle(color: AppColors.textGray, fontSize: 13)),
             const SizedBox(width: 8),
             const Text('/', style: TextStyle(color: AppColors.textGray)),
             const SizedBox(width: 8),
-            Text(pageLabel, style: const TextStyle(color: AppColors.textDark, fontSize: 13, fontWeight: FontWeight.w600)),
+            Text(pageLabel,
+                style: const TextStyle(
+                    color: AppColors.textDark,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600)),
           ],
           const Spacer(),
           Stack(
             children: [
-              IconButton(icon: const Icon(Icons.notifications_outlined, color: AppColors.textGray), onPressed: () {}),
+              IconButton(
+                  icon: const Icon(Icons.notifications_outlined,
+                      color: AppColors.textGray),
+                  onPressed: () {}),
               Positioned(
-                top: 8, right: 8,
-                child: Container(width: 8, height: 8, decoration: const BoxDecoration(color: Colors.red, shape: BoxShape.circle)),
+                top: 8,
+                right: 8,
+                child: Container(
+                    width: 8,
+                    height: 8,
+                    decoration: const BoxDecoration(
+                        color: Colors.red, shape: BoxShape.circle)),
               ),
             ],
           ),
           const SizedBox(width: 8),
           Container(
-            width: 34, height: 34,
-            decoration: BoxDecoration(gradient: goldGradient, shape: BoxShape.circle),
-            child: const Center(child: Text('MB', style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold))),
+            width: 34,
+            height: 34,
+            decoration:
+                BoxDecoration(gradient: goldGradient, shape: BoxShape.circle),
+            child: const Center(
+                child: Text('MB',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold))),
           ),
         ],
       ),
@@ -130,17 +153,28 @@ class _BankLayoutState extends State<BankLayout> {
           // Logo
           Container(
             padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.white.withOpacity(0.1)))),
+            decoration: BoxDecoration(
+                border: Border(
+                    bottom: BorderSide(
+                        color: Colors.white.withValues(alpha: 0.1)))),
             child: Row(children: [
               Container(
-                width: 40, height: 40,
-                decoration: BoxDecoration(gradient: goldGradient, borderRadius: BorderRadius.circular(10)),
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                    gradient: goldGradient,
+                    borderRadius: BorderRadius.circular(10)),
                 child: const Icon(Icons.shield, color: Colors.white, size: 20),
               ),
               const SizedBox(width: 12),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('PMB System', style: GoogleFonts.playfairDisplay(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
-                Text('Private Banking', style: TextStyle(color: Colors.blue[300], fontSize: 11)),
+                Text('PMB System',
+                    style: GoogleFonts.playfairDisplay(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold)),
+                Text('Private Banking',
+                    style: TextStyle(color: Colors.blue[300], fontSize: 11)),
               ]),
             ]),
           ),
@@ -150,20 +184,37 @@ class _BankLayoutState extends State<BankLayout> {
             margin: const EdgeInsets.all(12),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.08),
+              color: Colors.white.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(children: [
               Container(
-                width: 36, height: 36,
-                decoration: BoxDecoration(gradient: goldGradient, shape: BoxShape.circle),
-                child: const Center(child: Text('MB', style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold))),
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                    gradient: goldGradient, shape: BoxShape.circle),
+                child: const Center(
+                    child: Text('MB',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold))),
               ),
               const SizedBox(width: 10),
-              Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                const Text('Moses Byarugaba', style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600), overflow: TextOverflow.ellipsis),
-                Text('Platinum Account', style: TextStyle(color: Colors.blue[300], fontSize: 11)),
-              ])),
+              Expanded(
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                    const Text('Moses Byarugaba',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600),
+                        overflow: TextOverflow.ellipsis),
+                    Text('Platinum Account',
+                        style:
+                            TextStyle(color: Colors.blue[300], fontSize: 11)),
+                  ])),
             ]),
           ),
 
@@ -172,7 +223,8 @@ class _BankLayoutState extends State<BankLayout> {
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
               children: [
-                ..._navItems.asMap().entries.map((e) => _navTile(context, e.key, e.value, e.key == _selectedIndex)),
+                ..._navItems.asMap().entries.map((e) =>
+                    _navTile(context, e.key, e.value, e.key == _selectedIndex)),
               ],
             ),
           ),
@@ -180,14 +232,21 @@ class _BankLayoutState extends State<BankLayout> {
           // Bottom items
           Container(
             padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(border: Border(top: BorderSide(color: Colors.white.withOpacity(0.1)))),
+            decoration: BoxDecoration(
+                border: Border(
+                    top: BorderSide(
+                        color: Colors.white.withValues(alpha: 0.1)))),
             child: Column(children: [
               _bottomTile(context, Icons.settings_outlined, 'Settings', () {
                 setState(() => _selectedIndex = 5);
-                if (MediaQuery.of(context).size.width < 1024) Navigator.of(context).pop();
+                if (MediaQuery.of(context).size.width < 1024) {
+                  Navigator.of(context).pop();
+                }
               }, _selectedIndex == 5),
               const SizedBox(height: 4),
-              _bottomTile(context, Icons.logout, 'Sign Out', widget.onLogout, false, isLogout: true),
+              _bottomTile(
+                  context, Icons.logout, 'Sign Out', widget.onLogout, false,
+                  isLogout: true),
             ]),
           ),
         ],
@@ -199,38 +258,60 @@ class _BankLayoutState extends State<BankLayout> {
     return GestureDetector(
       onTap: () {
         setState(() => _selectedIndex = index);
-        if (MediaQuery.of(context).size.width < 1024) Navigator.of(context).pop();
+        if (MediaQuery.of(context).size.width < 1024) {
+          Navigator.of(context).pop();
+        }
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 2),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: BoxDecoration(
-          gradient: active ? LinearGradient(colors: [AppColors.gold.withOpacity(0.27), AppColors.goldLight.withOpacity(0.13)]) : null,
+          gradient: active
+              ? LinearGradient(colors: [
+                  AppColors.gold.withValues(alpha: 0.27),
+                  AppColors.goldLight.withValues(alpha: 0.13),
+                ])
+              : null,
           borderRadius: BorderRadius.circular(12),
-          border: active ? const Border(left: BorderSide(color: AppColors.gold, width: 3)) : null,
+          border: active
+              ? const Border(left: BorderSide(color: AppColors.gold, width: 3))
+              : null,
         ),
         child: Row(children: [
-          Icon(item.icon, size: 16, color: active ? Colors.white : Colors.blue[300]),
+          Icon(item.icon,
+              size: 16, color: active ? Colors.white : Colors.blue[300]),
           const SizedBox(width: 12),
-          Text(item.label, style: TextStyle(color: active ? Colors.white : Colors.blue[300], fontSize: 14, fontWeight: active ? FontWeight.w600 : FontWeight.normal)),
+          Text(item.label,
+              style: TextStyle(
+                  color: active ? Colors.white : Colors.blue[300],
+                  fontSize: 14,
+                  fontWeight: active ? FontWeight.w600 : FontWeight.normal)),
         ]),
       ),
     );
   }
 
-  Widget _bottomTile(BuildContext context, IconData icon, String label, VoidCallback onTap, bool active, {bool isLogout = false}) {
+  Widget _bottomTile(BuildContext context, IconData icon, String label,
+      VoidCallback onTap, bool active,
+      {bool isLogout = false}) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          color: active ? Colors.white.withOpacity(0.08) : Colors.transparent,
+          color: active
+              ? Colors.white.withValues(alpha: 0.08)
+              : Colors.transparent,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Row(children: [
-          Icon(icon, size: 16, color: isLogout ? Colors.red[300] : Colors.blue[300]),
+          Icon(icon,
+              size: 16, color: isLogout ? Colors.red[300] : Colors.blue[300]),
           const SizedBox(width: 12),
-          Text(label, style: TextStyle(color: isLogout ? Colors.red[300] : Colors.blue[300], fontSize: 14)),
+          Text(label,
+              style: TextStyle(
+                  color: isLogout ? Colors.red[300] : Colors.blue[300],
+                  fontSize: 14)),
         ]),
       ),
     );
