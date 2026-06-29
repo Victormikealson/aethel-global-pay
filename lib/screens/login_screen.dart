@@ -112,12 +112,16 @@ class _LoginScreenState extends State<LoginScreen> {
             // Right Panel - login form
             Container(
               width: wide ? 480 : double.infinity,
-              padding: const EdgeInsets.all(40),
+              padding: EdgeInsets.symmetric(
+                horizontal: wide ? 40 : 20,
+                vertical: 40,
+              ),
               child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 400),
-                  child: Container(
-                    padding: const EdgeInsets.all(40),
+                child: SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 400),
+                    child: Container(
+                      padding: EdgeInsets.all(wide ? 40 : 24),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(24),

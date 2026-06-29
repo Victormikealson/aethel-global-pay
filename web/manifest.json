@@ -1,12 +1,12 @@
 {
-    "name": "aethel_global_pay",
-    "short_name": "aethel_global_pay",
+    "name": "PMB System",
+    "short_name": "PMB System",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#0d1f3c",
+    "theme_color": "#0d1f3c",
+    "description": "Private Monetary Banking System",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {
