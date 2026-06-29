@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Gold rounded square background -->
+    <path
+        android:fillColor="#C9973A"
+        android:pathData="M20,16 Q20,8 28,8 L92,8 Q100,8 100,16 L100,80 Q100,110 60,116 Q20,110 20,80 Z" />
+
+    <!-- White shield inner highlight -->
+    <path
+        android:fillColor="#F0C060"
+        android:pathData="M32,24 Q32,18 38,18 L82,18 Q88,18 88,24 L88,74 Q88,98 60,104 Q32,98 32,74 Z"
+        android:fillAlpha="0.3"/>
+
+    <!-- White lock/key symbol in center -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,36 C52,36 46,42 46,50 L46,54 Q42,54 42,58 L42,76 Q42,80 46,80 L74,80 Q78,80 78,76 L78,58 Q78,54 74,54 L74,50 C74,42 68,36 60,36 Z M60,42 C64.4,42 68,45.6 68,50 L68,54 L52,54 L52,50 C52,45.6 55.6,42 60,42 Z M60,62 C62.2,62 64,63.8 64,66 C64,68.2 62.2,70 60,70 C57.8,70 56,68.2 56,66 C56,63.8 57.8,62 60,62 Z" />
+</vector>
