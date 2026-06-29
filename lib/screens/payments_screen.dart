@@ -53,12 +53,12 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
                 border: Border.all(color: const Color(0xFFbbf7d0)),
                 borderRadius: BorderRadius.circular(14),
               ),
-              child: Row(children: [
-                const Icon(Icons.check_circle, color: AppColors.green, size: 20),
-                const SizedBox(width: 12),
+              child: const Row(children: [
+                Icon(Icons.check_circle, color: AppColors.green, size: 20),
+                SizedBox(width: 12),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  const Text('Transfer Initiated Successfully', style: TextStyle(color: Color(0xFF166534), fontWeight: FontWeight.w600, fontSize: 14)),
-                  const Text('Your payment has been queued for processing', style: TextStyle(color: AppColors.green, fontSize: 12)),
+                  Text('Transfer Initiated Successfully', style: TextStyle(color: Color(0xFF166534), fontWeight: FontWeight.w600, fontSize: 14)),
+                  Text('Your payment has been queued for processing', style: TextStyle(color: AppColors.green, fontSize: 12)),
                 ]),
               ]),
             ),
@@ -115,7 +115,7 @@ class _PaymentsScreenState extends State<PaymentsScreen> {
             const SizedBox(width: 4),
             Text(method.speed, style: const TextStyle(fontSize: 11, color: AppColors.textGray)),
             const Spacer(),
-            Text('Limit: ', style: const TextStyle(fontSize: 11, color: AppColors.textGray)),
+            const Text('Limit: ', style: TextStyle(fontSize: 11, color: AppColors.textGray)),
             Text(method.limit, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: AppColors.textDark)),
           ]),
           const SizedBox(height: 10),
@@ -230,7 +230,7 @@ class _TransferModalState extends State<_TransferModal> {
           contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.border)),
           enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.border)),
-          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: AppColors.navy, width: 2)),
+          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.navy, width: 2)),
         ),
       ),
     ]);

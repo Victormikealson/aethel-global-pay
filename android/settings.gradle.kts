@@ -8,13 +8,14 @@ pluginManagement {
             flutterSdkPath
         }
 
-    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
-
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven("https://plugins.gradle.org/m2/")
     }
+
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
 }
 
 plugins {

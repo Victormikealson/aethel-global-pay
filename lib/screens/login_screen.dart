@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [AppColors.navy, AppColors.navyLight, AppColors.navy],
             begin: Alignment.topLeft,
@@ -52,13 +52,12 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         child: Row(
           children: [
-            // Left Panel - decorative, only on wide screens
+            // Left Panel — only on wide screens
             if (wide)
               Expanded(
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    // Concentric circles
                     ...List.generate(6, (i) => Container(
                       width: (i + 1) * 120.0,
                       height: (i + 1) * 120.0,
@@ -72,19 +71,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         Container(
                           width: 80, height: 80,
-                          decoration: BoxDecoration(
-                            gradient: goldGradient,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                          decoration: BoxDecoration(gradient: goldGradient, borderRadius: BorderRadius.circular(20)),
                           child: const Icon(Icons.shield, color: Colors.white, size: 40),
                         ),
                         const SizedBox(height: 24),
                         Text(
                           'Private Monetary\nBanking System',
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.playfairDisplay(
-                            color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold, height: 1.3,
-                          ),
+                          style: GoogleFonts.playfairDisplay(color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold, height: 1.3),
                         ),
                         const SizedBox(height: 16),
                         Text(
@@ -109,108 +103,98 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
 
-            // Right Panel - login form
+            // Right Panel — login form
             Container(
               width: wide ? 480 : double.infinity,
-              padding: EdgeInsets.symmetric(
-                horizontal: wide ? 40 : 20,
-                vertical: 40,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: wide ? 40 : 20, vertical: 40),
               child: Center(
                 child: SingleChildScrollView(
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 400),
                     child: Container(
                       padding: EdgeInsets.all(wide ? 40 : 24),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(24),
-                      boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 40, offset: const Offset(0, 20))],
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (!wide) ...[
-                          Row(children: [
-                            Container(
-                              width: 40, height: 40,
-                              decoration: BoxDecoration(gradient: goldGradient, borderRadius: BorderRadius.circular(10)),
-                              child: const Icon(Icons.shield, color: Colors.white, size: 20),
-                            ),
-                            const SizedBox(width: 12),
-                            Text('PMB System', style: GoogleFonts.playfairDisplay(color: AppColors.navy, fontSize: 20, fontWeight: FontWeight.bold)),
-                          ]),
-                          const SizedBox(height: 24),
-                        ],
-                        Text('Secure Access', style: GoogleFonts.playfairDisplay(color: AppColors.navy, fontSize: 24, fontWeight: FontWeight.bold)),
-                        const SizedBox(height: 8),
-                        Text('Enter your credentials to access the private banking portal', style: TextStyle(color: AppColors.textGray, fontSize: 13)),
-                        const SizedBox(height: 32),
-
-                        _label('USERNAME'),
-                        const SizedBox(height: 8),
-                        TextField(
-                          controller: _usernameCtrl,
-                          decoration: _inputDec('Enter username', const Icon(Icons.person_outline, color: Color(0xFF9ca3af), size: 18)),
-                        ),
-                        const SizedBox(height: 20),
-
-                        _label('PASSWORD'),
-                        const SizedBox(height: 8),
-                        TextField(
-                          controller: _passwordCtrl,
-                          obscureText: !_showPass,
-                          decoration: _inputDec('Enter password', const Icon(Icons.lock_outline, color: Color(0xFF9ca3af), size: 18)).copyWith(
-                            suffixIcon: IconButton(
-                              icon: Icon(_showPass ? Icons.visibility_off : Icons.visibility, color: const Color(0xFF9ca3af), size: 18),
-                              onPressed: () => setState(() => _showPass = !_showPass),
-                            ),
-                          ),
-                          onSubmitted: (_) => _handleLogin(),
-                        ),
-
-                        if (_error.isNotEmpty) ...[
-                          const SizedBox(height: 16),
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFfef2f2),
-                              border: Border.all(color: const Color(0xFFfecaca)),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(_error, style: const TextStyle(color: Color(0xFFdc2626), fontSize: 13)),
-                          ),
-                        ],
-
-                        const SizedBox(height: 24),
-                        SizedBox(
-                          width: double.infinity,
-                          height: 52,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              gradient: navyGradient,
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            child: TextButton(
-                              onPressed: _loading ? null : _handleLogin,
-                              child: _loading
-                                  ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                                  : const Text('ACCESS ACCOUNT', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 1.5, fontSize: 13)),
-                            ),
-                          ),
-                        ),
-
-                        const SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.shield_outlined, size: 14, color: Color(0xFF9ca3af)),
-                            const SizedBox(width: 6),
-                            const Text('256-bit SSL Encrypted · ISO 27001 Certified', style: TextStyle(color: Color(0xFF9ca3af), fontSize: 11)),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 40, offset: const Offset(0, 20))],
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (!wide) ...[
+                            Row(children: [
+                              Container(
+                                width: 40, height: 40,
+                                decoration: BoxDecoration(gradient: goldGradient, borderRadius: BorderRadius.circular(10)),
+                                child: const Icon(Icons.shield, color: Colors.white, size: 20),
+                              ),
+                              const SizedBox(width: 12),
+                              Text('PMB System', style: GoogleFonts.playfairDisplay(color: AppColors.navy, fontSize: 20, fontWeight: FontWeight.bold)),
+                            ]),
+                            const SizedBox(height: 24),
                           ],
-                        ),
-                      ],
+                          Text('Secure Access', style: GoogleFonts.playfairDisplay(color: AppColors.navy, fontSize: 24, fontWeight: FontWeight.bold)),
+                          const SizedBox(height: 8),
+                          const Text('Enter your credentials to access the private banking portal', style: TextStyle(color: AppColors.textGray, fontSize: 13)),
+                          const SizedBox(height: 32),
+                          _label('USERNAME'),
+                          const SizedBox(height: 8),
+                          TextField(
+                            controller: _usernameCtrl,
+                            decoration: _inputDec('Enter username', const Icon(Icons.person_outline, color: Color(0xFF9ca3af), size: 18)),
+                          ),
+                          const SizedBox(height: 20),
+                          _label('PASSWORD'),
+                          const SizedBox(height: 8),
+                          TextField(
+                            controller: _passwordCtrl,
+                            obscureText: !_showPass,
+                            decoration: _inputDec('Enter password', const Icon(Icons.lock_outline, color: Color(0xFF9ca3af), size: 18)).copyWith(
+                              suffixIcon: IconButton(
+                                icon: Icon(_showPass ? Icons.visibility_off : Icons.visibility, color: const Color(0xFF9ca3af), size: 18),
+                                onPressed: () => setState(() => _showPass = !_showPass),
+                              ),
+                            ),
+                            onSubmitted: (_) => _handleLogin(),
+                          ),
+                          if (_error.isNotEmpty) ...[
+                            const SizedBox(height: 16),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFfef2f2),
+                                border: Border.all(color: const Color(0xFFfecaca)),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Text(_error, style: const TextStyle(color: Color(0xFFdc2626), fontSize: 13)),
+                            ),
+                          ],
+                          const SizedBox(height: 24),
+                          SizedBox(
+                            width: double.infinity,
+                            height: 52,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(gradient: navyGradient, borderRadius: BorderRadius.circular(14)),
+                              child: TextButton(
+                                onPressed: _loading ? null : _handleLogin,
+                                child: _loading
+                                    ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+                                    : const Text('ACCESS ACCOUNT', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 1.5, fontSize: 13)),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.shield_outlined, size: 14, color: Color(0xFF9ca3af)),
+                              SizedBox(width: 6),
+                              Text('256-bit SSL Encrypted · ISO 27001 Certified', style: TextStyle(color: Color(0xFF9ca3af), fontSize: 11)),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -243,7 +227,7 @@ class _LoginScreenState extends State<LoginScreen> {
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: Color(0xFFe5e7eb))),
       enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: Color(0xFFe5e7eb))),
-      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: BorderSide(color: AppColors.navy, width: 2)),
+      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AppColors.navy, width: 2)),
       filled: true,
       fillColor: Colors.white,
     );

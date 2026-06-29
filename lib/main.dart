@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/login_screen.dart';
-import 'screens/dashboard_screen.dart';
-import 'screens/accounts_screen.dart';
-import 'screens/payments_screen.dart';
-import 'screens/banks_screen.dart';
-import 'screens/transfers_screen.dart';
-import 'screens/settings_screen.dart';
 import 'widgets/bank_layout.dart';
 
 void main() {

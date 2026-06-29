@@ -228,7 +228,7 @@ class _TransfersScreenState extends State<TransfersScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(children: [
-            Icon(Icons.public, color: AppColors.gold, size: 16),
+            const Icon(Icons.public, color: AppColors.gold, size: 16),
             const SizedBox(width: 8),
             Text('Recent Transfers', style: GoogleFonts.playfairDisplay(color: AppColors.textDark, fontSize: 15, fontWeight: FontWeight.w600)),
           ]),
@@ -278,7 +278,7 @@ class _TransfersScreenState extends State<TransfersScreen> {
           contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.border)),
           enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.border)),
-          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: AppColors.navy, width: 2)),
+          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.navy, width: 2)),
         ),
       ),
     ]);

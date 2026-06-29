@@ -25,14 +25,14 @@ class BankLayout extends StatefulWidget {
 
 class _BankLayoutState extends State<BankLayout> {
   int _selectedIndex = 0;
-  bool _drawerOpen = false;
+  final bool _drawerOpen = false;
 
   late final List<NavItem> _navItems = [
-    NavItem('Dashboard', Icons.dashboard_outlined, const DashboardScreen()),
-    NavItem('Accounts', Icons.credit_card_outlined, const AccountsScreen()),
-    NavItem('Payments', Icons.swap_horiz, const PaymentsScreen()),
-    NavItem('Global Banks', Icons.account_balance_outlined, const BanksScreen()),
-    NavItem('Transfers', Icons.public, const TransfersScreen()),
+    const NavItem('Dashboard', Icons.dashboard_outlined, DashboardScreen()),
+    const NavItem('Accounts', Icons.credit_card_outlined, AccountsScreen()),
+    const NavItem('Payments', Icons.swap_horiz, PaymentsScreen()),
+    const NavItem('Global Banks', Icons.account_balance_outlined, BanksScreen()),
+    const NavItem('Transfers', Icons.public, TransfersScreen()),
   ];
 
   @override
@@ -91,9 +91,9 @@ class _BankLayoutState extends State<BankLayout> {
             )),
           if (!wide) const SizedBox(width: 8),
           if (wide) ...[
-            Text('Private Monetary Banking System', style: TextStyle(color: AppColors.textGray, fontSize: 13)),
+            const Text('Private Monetary Banking System', style: TextStyle(color: AppColors.textGray, fontSize: 13)),
             const SizedBox(width: 8),
-            Text('/', style: TextStyle(color: AppColors.textGray)),
+            const Text('/', style: TextStyle(color: AppColors.textGray)),
             const SizedBox(width: 8),
             Text(pageLabel, style: const TextStyle(color: AppColors.textDark, fontSize: 13, fontWeight: FontWeight.w600)),
           ],
@@ -207,7 +207,7 @@ class _BankLayoutState extends State<BankLayout> {
         decoration: BoxDecoration(
           gradient: active ? LinearGradient(colors: [AppColors.gold.withOpacity(0.27), AppColors.goldLight.withOpacity(0.13)]) : null,
           borderRadius: BorderRadius.circular(12),
-          border: active ? Border(left: BorderSide(color: AppColors.gold, width: 3)) : null,
+          border: active ? const Border(left: BorderSide(color: AppColors.gold, width: 3)) : null,
         ),
         child: Row(children: [
           Icon(item.icon, size: 16, color: active ? Colors.white : Colors.blue[300]),

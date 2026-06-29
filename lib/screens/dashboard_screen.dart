@@ -52,12 +52,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Welcome back,', style: TextStyle(color: AppColors.textGray, fontSize: 13)),
+                    const Text('Welcome back,', style: TextStyle(color: AppColors.textGray, fontSize: 13)),
                     const SizedBox(height: 4),
                     Text('Moses Byarugaba',
                         style: GoogleFonts.playfairDisplay(color: AppColors.navy, fontSize: isMobile ? 18 : 22, fontWeight: FontWeight.bold)),
                     const SizedBox(height: 4),
-                    Text('Platinum Private Account · Last login: Today 09:42 AM',
+                    const Text('Platinum Private Account · Last login: Today 09:42 AM',
                         style: TextStyle(color: AppColors.textGray, fontSize: 11), overflow: TextOverflow.ellipsis),
                   ],
                 ),
@@ -136,10 +136,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
               spacing: 12,
               runSpacing: 6,
               children: [
-                Row(mainAxisSize: MainAxisSize.min, children: [
-                  const Icon(Icons.trending_up, color: Color(0xFF4ade80), size: 14),
-                  const SizedBox(width: 4),
-                  const Text('+3.47% this month', style: TextStyle(color: Color(0xFF4ade80), fontSize: 12)),
+                const Row(mainAxisSize: MainAxisSize.min, children: [
+                  Icon(Icons.trending_up, color: Color(0xFF4ade80), size: 14),
+                  SizedBox(width: 4),
+                  Text('+3.47% this month', style: TextStyle(color: Color(0xFF4ade80), fontSize: 12)),
                 ]),
                 Text('8 currencies · 114 banks', style: TextStyle(color: Colors.blue[300], fontSize: 11)),
               ],
@@ -234,7 +234,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               const Text('Account Active', style: TextStyle(fontSize: 11, color: AppColors.textGray)),
               const Spacer(),
               GestureDetector(
-                child: Row(children: [
+                child: const Row(children: [
                   Text('View', style: TextStyle(fontSize: 11, color: AppColors.gold, fontWeight: FontWeight.w600)),
                   Icon(Icons.arrow_outward, size: 11, color: AppColors.gold),
                 ]),

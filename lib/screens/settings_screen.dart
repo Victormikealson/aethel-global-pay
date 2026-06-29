@@ -95,9 +95,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       child: const Icon(Icons.lock_outline, color: Colors.white, size: 18),
                     ),
                     const SizedBox(width: 14),
-                    Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                      const Text('Change Password', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.textDark)),
-                      const Text('Update your secure account password', style: TextStyle(fontSize: 12, color: AppColors.textGray)),
+                    const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                      Text('Change Password', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: AppColors.textDark)),
+                      Text('Update your secure account password', style: TextStyle(fontSize: 12, color: AppColors.textGray)),
                     ]),
                   ]),
                   const SizedBox(height: 24),
@@ -110,12 +110,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         border: Border.all(color: const Color(0xFFbbf7d0)),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: Row(children: [
-                        const Icon(Icons.check_circle, color: AppColors.green, size: 18),
-                        const SizedBox(width: 10),
+                      child: const Row(children: [
+                        Icon(Icons.check_circle, color: AppColors.green, size: 18),
+                        SizedBox(width: 10),
                         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                          const Text('Password Updated Successfully', style: TextStyle(color: Color(0xFF166534), fontWeight: FontWeight.w600, fontSize: 13)),
-                          const Text('Your new password is now active', style: TextStyle(color: AppColors.green, fontSize: 11)),
+                          Text('Password Updated Successfully', style: TextStyle(color: Color(0xFF166534), fontWeight: FontWeight.w600, fontSize: 13)),
+                          Text('Your new password is now active', style: TextStyle(color: AppColors.green, fontSize: 11)),
                         ]),
                       ]),
                     ),
@@ -211,7 +211,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.border)),
           enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.border)),
-          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: AppColors.navy, width: 2)),
+          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.navy, width: 2)),
         ),
       ),
     ]);

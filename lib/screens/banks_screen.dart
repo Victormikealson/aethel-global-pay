@@ -83,7 +83,7 @@ class _BanksScreenState extends State<BanksScreen> {
               contentPadding: const EdgeInsets.symmetric(vertical: 14),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.border)),
               enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.border)),
-              focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: AppColors.navy, width: 2)),
+              focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: const BorderSide(color: AppColors.navy, width: 2)),
               filled: true,
               fillColor: Colors.white,
             ),
@@ -156,10 +156,10 @@ class _BanksScreenState extends State<BanksScreen> {
                       decoration: BoxDecoration(color: _typeBg(bank.type), borderRadius: BorderRadius.circular(20)),
                       child: Text(bank.type, style: TextStyle(fontSize: 11, color: _typeColor(bank.type), fontWeight: FontWeight.w600), overflow: TextOverflow.ellipsis),
                     )),
-                    Expanded(flex: 2, child: Row(children: [
-                      const Icon(Icons.check_circle, size: 14, color: AppColors.green),
-                      const SizedBox(width: 4),
-                      const Text('Active', style: TextStyle(fontSize: 12, color: AppColors.green, fontWeight: FontWeight.w600)),
+                    const Expanded(flex: 2, child: Row(children: [
+                      Icon(Icons.check_circle, size: 14, color: AppColors.green),
+                      SizedBox(width: 4),
+                      Text('Active', style: TextStyle(fontSize: 12, color: AppColors.green, fontWeight: FontWeight.w600)),
                     ])),
                   ]),
                 )),
