@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         applicationId = "com.aethel.aethel_global_pay"
-        minSdk = flutter.minSdkVersion
+        minSdk = 26
         targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
